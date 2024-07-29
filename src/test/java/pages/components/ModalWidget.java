@@ -32,7 +32,7 @@ public class ModalWidget {
         return this;
     }
 
-    @Step("Проверяем отображение модального окна после регистрации")
+    @Step("Проверяем отсутствие отображения модального окна после вывода ошибки в форме регистрации")
     public void modalWindowNotExist() {
         modalWindow.shouldNotBe(exist);
     }
