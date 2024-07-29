@@ -24,7 +24,6 @@ public class ModalWidget {
     private final SelenideElement modalTitle = $("#example-modal-sizes-title-lg");
     private final SelenideElement modalWindowWithResults = $(".table-responsive");
 
-    @Step("Проверяем данные студента после регистрации в модальном окне")
     public ModalWidget checkResultRegistrationForm(String key, String value) {
         modalWindow.should(appear);
         modalTitle.shouldHave(text("Thanks for submitting the form"));

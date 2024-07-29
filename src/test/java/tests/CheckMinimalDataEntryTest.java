@@ -9,10 +9,13 @@ import tests.utils.RandomUtils;
 
 import static pages.components.ModalWidget.*;
 
+import static io.qameta.allure.Allure.step;
+
 public class CheckMinimalDataEntryTest extends TestBase {
 
     @Test
-    @Tag("smoke") @Tag("registration")
+    @Tag("smoke")
+    @Tag("registration")
     @DisplayName("Тест проверяет минимальный ввод данных в форме регистрации")
     void checkingMinimalDataEntryTest() {
         RandomUtils randomUtils = new RandomUtils();
@@ -25,12 +28,13 @@ public class CheckMinimalDataEntryTest extends TestBase {
                 .setDateOfBirth(randomUtils.dayOfBirth, randomUtils.monthOfBirth, randomUtils.yearOfBirth)
                 .submitRegistrationForm();
 
-        new ModalWidget().checkResultRegistrationForm(MODAL_STUDENT_NAME, randomUtils.firstName + " " + randomUtils.lastName)
-                .checkResultRegistrationForm(MODAL_STUDENT_GENDER, randomUtils.userGender)
-                .checkResultRegistrationForm(MODAL_STUDENT_MOBILE, randomUtils.userNumber)
-                .checkResultRegistrationForm(MODAL_STUDENT_DATE_OF_BIRTH, randomUtils.dayOfBirth + " "
-                        + randomUtils.monthOfBirth + ","
-                        + randomUtils.yearOfBirth
-                );
+        step("Проверяем результаты регистрации в модальном окне",
+                () -> new ModalWidget().checkResultRegistrationForm(MODAL_STUDENT_NAME, randomUtils.firstName + " " + randomUtils.lastName)
+                        .checkResultRegistrationForm(MODAL_STUDENT_GENDER, randomUtils.userGender)
+                        .checkResultRegistrationForm(MODAL_STUDENT_MOBILE, randomUtils.userNumber)
+                        .checkResultRegistrationForm(MODAL_STUDENT_DATE_OF_BIRTH, randomUtils.dayOfBirth + " "
+                                + randomUtils.monthOfBirth + ","
+                                + randomUtils.yearOfBirth
+                ));
     }
 }
