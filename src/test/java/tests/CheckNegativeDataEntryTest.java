@@ -11,7 +11,7 @@ public class CheckNegativeDataEntryTest extends TestBase {
 
     @Test
     @Tag("smoke") @Tag("registration")
-    @DisplayName("Проверяет вывод ошибки в форме регистрации студента при отсутствии введенного номера телефона")
+    @DisplayName("Тест проверяет вывод ошибки в форме регистрации студента при отсутствии введенного номера телефона")
     void checkingNegativeDataEntryTest() {
         RandomUtils randomUtils = new RandomUtils();
         new RegistrationPage().openRegistrationPage()

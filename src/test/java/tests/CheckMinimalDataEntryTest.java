@@ -13,7 +13,7 @@ public class CheckMinimalDataEntryTest extends TestBase {
 
     @Test
     @Tag("smoke") @Tag("registration")
-    @DisplayName("Проверяет минимальный ввод данных в форме регистрации")
+    @DisplayName("Тест проверяет минимальный ввод данных в форме регистрации")
     void checkingMinimalDataEntryTest() {
         RandomUtils randomUtils = new RandomUtils();
         new RegistrationPage().openRegistrationPage()
