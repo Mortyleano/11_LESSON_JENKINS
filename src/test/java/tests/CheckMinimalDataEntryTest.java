@@ -36,6 +36,5 @@ public class CheckMinimalDataEntryTest extends TestBase {
                                 + randomUtils.monthOfBirth + ","
                                 + randomUtils.yearOfBirth
                 ));
-
     }
 }
